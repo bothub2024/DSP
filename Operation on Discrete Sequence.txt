@@ -1,0 +1,107 @@
+clc;
+close all; 
+clear all;
+n=-2:2
+x=[1 2 3 4 5]
+subplot(4,4,1)
+stem(n,x)
+xlabel('time')
+ylabel('Amplitude')
+title('Original signal')
+m=n+2
+subplot(4,4,2)
+stem(m,x)
+xlabel('time')
+ylabel('Amplitude')
+title('Right shifting')
+m=n-2
+subplot(4,4,3)
+stem(m,x)
+xlabel('time')
+ylabel('Amplitude')
+title('Left shifting')
+a=2
+b=0.5
+c=-1
+m=a.*n
+subplot(4,4,4)
+stem(m,x)
+xlabel('time')
+ylabel('Amplitude')
+title('Expansion of signal')
+m=b.*n
+subplot(4,4,5)
+stem(m,x)
+xlabel('time')
+ylabel('Amplitude')
+title('Compression of signal')
+m=c.*n
+subplot(4,4,6)
+stem(m,x)
+xlabel('time')
+ylabel('Amplitude')
+title('Reversal of signal ')
+n=-2:2
+x1=[1 2 3 4 5]
+x2=[2 4 3 6 1]
+x=x1+x2
+subplot(4,4,7)
+stem(n,x)
+xlabel('time')
+ylabel('Amplitude')
+title('Addition of signal')
+n=-2:2
+x1=[1 2 3 4 5]
+x2=[2 4 3 6 1]
+x=x1-x2
+subplot(4,4,8)
+stem(n,x)
+xlabel('time')
+ylabel('Amplitude')
+title('subtraction of signal')
+n=-2:2
+x1=[1 2 3 4 5]
+x2=[2 4 3 6 1]
+x=x1.*x2
+subplot(4,4,9)
+stem(n,x)
+xlabel('time')
+ylabel('Amplitude')
+title('Multiplication of signal')
+n=-2:2
+x1=[1 2 3 4 5]
+x2=[2 4 3 6 1]
+x=x1./x2
+subplot(4,4,10)
+stem(n,x)
+xlabel('time')
+ylabel('Amplitude')
+title('Division of signal')
+n=-2:2
+a=2
+x=[1 2 3 4 5]
+m=a.*x
+subplot(4,4,11)
+stem(n,x)
+xlabel('time')
+ylabel('Amplitude')
+title('Amplified version of signal')
+n=-2:2
+a=2
+x1=[1 2 3 4 5]
+m=a.*x1
+subplot(4,4,12)
+stem(n,x)
+xlabel('time')
+ylabel('Amplitude')
+title('Attenuated version of signal')
+n=-2:2
+a=2
+x1=[1 2 3 4 5]
+a=-1
+x=a.*x1
+subplot(4,4,13)
+stem(n,x)
+xlabel('time')
+ylabel('Amplitude')
+title('Inverse of signal')

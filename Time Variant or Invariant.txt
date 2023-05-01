@@ -1,0 +1,18 @@
+clc;
+clear all;
+close all;
+% time variance y(n)=x^2(n)
+n=0:3;
+x=[1 2 3 4];
+x1=[zeros(1,2),x];
+n1=0:length(x1)-1;
+y1=n1.*x1;
+disp(y1);
+y=n.*x;
+y2=[zeros(1,2),y];
+disp(y2);
+if y1==y2
+    disp('Time invariant');
+else
+    disp('Time variant');
+end

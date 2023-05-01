@@ -1,0 +1,38 @@
+clc;
+close all;
+clear all;
+x=input('Enter the Input Sequence x(n):')
+h=input('Enter the Input Sequence h(n):')
+n1=length(x)
+n2=length(h)
+N=n1+n2-1;
+x=[x,zeros(1,(N-n1))]
+h=[h,zeros(1,(N-n2))]
+for n=1:N
+    y=zeros(1,N);
+    for k=1:N
+        y(n)=y(n)+x(k)*h(n-k+1);
+    end
+end
+disp(y);
+          (OR)
+clc
+clear all
+close all
+n=0:3;
+%%Linear convolution
+x=[1 2 3 4]
+h=[1 2 1 2]
+M=length(x);
+N=length(h);
+K=M+N-1;
+x=[x zeros(1,K-M)]
+h=[h zeros(1,K-N)]
+for n=1:K
+    y(n)=0;
+for m=1:n
+    p=n-m+1
+    y(n)=y(n)+x(m)*h(p);
+end
+end
+disp(y);

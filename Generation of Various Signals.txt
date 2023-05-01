@@ -1,0 +1,111 @@
+clc;
+clear all;
+close all;
+n=-5:1:5
+for i=1:length(n)
+    if n(i)>=0
+        u(i)=1;
+    else
+        u(i)=0;
+    end
+end
+subplot(3,4,1)
+stem(n,u);
+xlabel('Time');
+ylabel('Amplitude');
+title('Unit Step');
+ 
+for i=1:length(n)
+    if n(i)>=0
+        r(i)=n(i);
+    else
+        r(i)=0;
+    end
+end
+subplot(3,4,2)
+stem(n,r);
+xlabel('Time');
+ylabel('Amplitude');
+title('Unit Ramp');
+ 
+ 
+for i=1:length(n)
+    if n(i)==0
+        del(i)=1;
+    else
+        del(i)=0
+    end
+end
+ 
+subplot(3,4,3)
+stem(n,del);
+xlabel('Time');
+ylabel('Amplitude');
+title('Impulse');
+ 
+n=-5:1:5
+a=2
+x=a.^n
+subplot(3,4,4)
+stem(n,x);
+xlabel('Time');
+ylabel('Amplitude');
+title('Growing Exponential');
+ 
+n=-5:1:5
+a=0.5
+x=a.^n
+subplot(3,4,5)
+stem(n,x);
+xlabel('Time');
+ylabel('Amplitude');
+title(' Decaying Exponential');
+ 
+n=-5:1:5
+a=-0.5
+x=a.^n
+subplot(3,4,6)
+stem(n,x);
+xlabel('Time');
+ylabel('Amplitude');
+title(' Alternate Decaying Exponential');
+ 
+n=-5:1:5
+a=-2
+x=a.^n
+subplot(3,4,7)
+stem(n,x);
+xlabel('time');
+ylabel('amplitude');
+title(' Alternate Growing Exponential');
+ 
+n=-2:0.01:2
+a=2;
+f=1;
+w=2*pi*f;
+x=a*sin(w*n);
+subplot(3,4,8)
+stem(n,x);
+xlabel('time');
+ylabel('amplitude');
+title(' Sine Wave');
+ 
+n=-2:0.01:2
+a=2;
+f=1;
+w=2*pi*f;
+x=a*cos(w*n);
+subplot(3,4,9)
+stem(n,x);
+xlabel('time');
+ylabel('amplitude');
+title(' Cosine Wave');
+ 
+n=1:10
+x=rand(1,10)
+subplot(3,4,10)
+stem(n,x);
+xlabel('time');
+ylabel('amplitude');
+title(' Random');
+ 

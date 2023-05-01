@@ -1,0 +1,19 @@
+clc;
+close all;
+clear all;
+x=[1 2 3 4]
+h=[1 2 -1 2]
+n1=length(x)
+n2=length(h)
+N=max(n1,n2);
+for n=1:N
+    y(n)=0;
+    for m=1:N
+        p=n-m+1
+        if p<=0
+            p=p+N
+        end
+        y(n)=y(n)+x(m)*h(p);
+    end
+end
+disp(y)

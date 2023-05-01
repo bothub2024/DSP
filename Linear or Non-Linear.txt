@@ -1,0 +1,32 @@
+clc;close all;clear all;
+x1=[1 2 3 4];
+x2=[4 5 6 7];
+y1=x1.^2;
+y2=x2.^2;
+y4=y1+y2;
+disp(y4)
+x01=x1+x2;
+y3=x01.^2;
+disp(y3)
+if y3==y4
+    disp('Linear System')
+else
+    disp('Non-Linear System')
+end
+
+clc;close all;clear all;
+n=0:3
+x1=[1 2 3 4];
+x2=[4 5 6 7];
+y1=n.*x1;
+y2=n.*x2;
+y4=y1+y2;
+disp(y4)
+x01=x1+x2;
+y3=n.*x01;
+disp(y3)
+if y3==y4
+    disp('Linear System')
+else
+    disp('Non-Linear System')
+end

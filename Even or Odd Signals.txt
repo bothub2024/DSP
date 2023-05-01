@@ -1,0 +1,14 @@
+clc;
+close all;
+clear all;
+n=0:3
+x=n.^2+2*n+6;
+n1=-n;
+x1=n1.^2+2*n1+6;
+xe=x+x1/2;
+x0=x-x1/2;
+if x==x1
+    disp('Even Signal')
+else
+    disp('Odd Signal')
+end

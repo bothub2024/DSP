@@ -1,0 +1,18 @@
+clc;
+clear all;
+close all;
+x=[1 2 3 4];
+y=[1 2 -1 2];
+N=4;
+for k=1:N
+    for n=1:N
+        W(k,n)=exp(-j*2*pi*(n-1)*(k-1)/N);
+    end
+end
+X=x*W;
+Y=y*W;
+Z=X.*Y;
+disp(Z)
+%%IDFT
+p=1/N*Z*conj(W)
+disp(p)

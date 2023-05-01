@@ -1,0 +1,14 @@
+clc
+clear all
+close all
+syms n N;
+x=(1/2).^n
+E=simplify(symsum(x.^2,n,0,inf))
+p=simplify(limit(symsum(x.^2,n,-0,N)/(2*N+1),N,inf))
+if E~=inf && p==0
+    disp('Energy Signal');
+elseif p~=inf && E==inf
+    disp('Power Signal');
+else
+    disp('Neither Energy or Power')
+end

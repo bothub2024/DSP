@@ -1,0 +1,42 @@
+clc;
+clear all;
+close all;
+x=[1 2 3 4];
+N=4;
+A=0:pi;
+for k=1:N
+    for n=1:N
+        W(k,n)=exp(-j*2*pi*(n-1)*(k-1)/N);
+    end
+end
+X=x*W
+mag=abs(X)
+phase=angle(X)
+subplot(2,2,1)
+plot(A,mag);
+title('Frequency Responce')
+xlabel('Normalised freq')
+ylabel('Magnitude')
+subplot(2,2,2)
+plot(A,phase)
+title('Frequency Responce')
+xlabel('Normalised freq')
+ylabel('Phase in radian')
+disp(X);
+%inverse dicrete fourier transform
+for n=1:N
+    for k=1:N
+        Y=1/N*X*conj(W);
+    end
+end
+m=abs(Y)
+p=angle(Y)
+subplot(2,2,3)
+plot(A,m);
+xlabel('Time')
+ylabel('Magnitude')
+subplot(2,2,4)
+plot(A,p)
+xlabel('Time')
+ylabel('Phase in radian')
+disp(Y);
