@@ -1,0 +1,26 @@
+clc;
+clear all;
+close all;
+rp=3;
+rs=20;
+fp=2000;
+fs=4000;
+fsa=10000;
+w1=2*fp/fsa;
+w2=2*fs/fsa;
+[n,wn]=cheb1ord(w1,w2,rp,rs)
+[b,a]=cheby1(n,rp,wn);
+w=-pi:0.01:pi;
+[h,om]=freqz(b,a,w);
+m=20*log10(abs(h));
+an=angle(h);
+subplot(2,1,1);
+plot(om/pi,m);
+title('Magnitude response of IIR filter: ');
+xlabel('(a) Normalized frequency');
+ylabel('Gain in dB');
+subplot(2,1,2);
+plot(om/pi,an);
+title('Phase response of IIR filter: ');
+xlabel('(b) Normalized frequency');
+ylabel('Phase in radians');
